@@ -37,10 +37,10 @@
 <br> トップページの体裁を整える(ボタンの設置、投稿された記録の表示など)
 
 - ユーザ管理機能
-<br> 新規登録、ログイン、ログアウトの実装(devise導入)
+<br> 新規登録、ログイン、ログアウトの実装(devise導入、usersテーブルの作成)
 
 - 投稿機能
-<br> 自分の残したい記録を投稿できる(必須項目と任意項目作成)
+<br> 自分の残したい記録を投稿できる(投稿管理テーブル作成、必須項目と任意項目作成)
 
 - 詳細機能
 <br> 投稿された記録の詳細を確認できる(誰でも閲覧可)
@@ -56,9 +56,39 @@
 
 ### ・実装予定の機能
 - いいね機能
+- 検索機能
 
-### ・データベース設計
-アプリ作成着手後追加
+### ・テーブル設計
+
+### usersテーブル
+
+|column    |Type  |options    |
+|----------|------|-----------|
+|nickname  |string|null: false|
+|email     |string|null: false|
+|password  |string|null: false|
+
+#### Association
+
+- has_many :memos
+
+### memosテーブル
+
+|column        |Type      |options          |
+|--------------|----------|-----------------|
+|user          |references|foreign_key: true|
+|movie_title   |string    |null: false      |
+|director      |string    |null: false      |
+|music         |string    |null: false      |
+|movie_genre   |integer   |null: false      |
+|music_genre   |integer   |null: false      |
+|theme_song    |string    |                 |
+|inserted_song |string    |                 |
+|text          |text      |                 |
+
+#### Association
+
+- belongs_to :user
 
 ### ・ローカルでの動作方法
 アプリ完成後追加

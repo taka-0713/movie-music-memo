@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_15_064703) do
+ActiveRecord::Schema.define(version: 2021_01_16_082044) do
+
+  create_table "memos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "movie_title", null: false
+    t.string "director", null: false
+    t.string "music", null: false
+    t.integer "movie_genre_id", null: false
+    t.integer "music_genre_id", null: false
+    t.string "theme_song"
+    t.string "inserted_song"
+    t.text "text"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_memos_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
@@ -25,4 +40,5 @@ ActiveRecord::Schema.define(version: 2021_01_15_064703) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "memos", "users"
 end

@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   end
 
   root to: 'memos#index'
+
+  resources :memos, only: [:new, :create]
+
 end

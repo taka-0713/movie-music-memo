@@ -6,10 +6,12 @@
   padding: 20px 0;
 }
 
+
 .nav{
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
@@ -22,33 +24,56 @@
   text-decoration: none;
 }
 
-.nav__right{
-  margin-right: 30px;
+.nav__right {
+  margin-right: 40px;
 }
 
-.nav__btn{
+.nav__btn {
   display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
+  padding: 5px 20px;
+  font-size: 13px;
   color: white;
   text-decoration: none;
   user-select: none;
   border: 1px solid white;
   border-radius: 3px;
-  margin-top: 15px;
 }
 
-
-
-/* フッター */
-
-/* .footer {
-  background-color: black;
-  padding: 10px 0;
+.nav__logout{
+  display: inline-block;
+  padding: 5px 20px;
+  font-size: 13px;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  border-radius: 3px;
 }
-.copyright {
-  text-align: center;
-  color: #fff;
-  font-size: 10px;
-} */
+
+/* 新規登録ページ */
+
+.inner{
+  margin-left: 50px;
+}
+
+.form__wrapper {
+  min-height: 50%;
+}
+
+.page-heading{
+  font-size: 40px;
+  font-weight: bold;
+}
+
+input[type="password"]{
+  width: 250px;
+}
+
+input[type="submit"]{
+  margin-top: 20px;
+}
+
+.field_with_errors {
+  display: contents;
+}
+
 

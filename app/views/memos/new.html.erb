@@ -1,0 +1,59 @@
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <h2 class="page-heading">新規メモ投稿</h2>
+
+        <%= form_with  model: @memo, local: true do |f| %>
+
+        <div class="field">
+          <%= f.label :movie_title_id, "映画タイトル（必須）" %><br />
+          <%= f.text_field :movie_title_id, placeholder:"映画のタイトルを入力してください ", size: 35 %>
+        </div>
+
+        <div class="field">
+          <%= f.label :director, "監督名（必須）" %><br />
+          <%= f.text_field :director, placeholder:"監督名を入力してください", size: 35 %>
+        </div>
+
+        <div class="field">
+          <%= f.label :music, "音楽担当（必須）" %><br />
+          <%= f.text_field :music, placeholder:"音楽担当を入力してください", size: 35  %>
+        </div>
+
+        <div class="field">
+          <%= f.label :movie_genre_id, "映画のジャンル（必須）" %><br />
+          <%= f.collection_select(:movie_genre_id, MovieGenre.all, :id, :name, {}, {class:"select-box"}) %>
+        </div>
+
+         <div class="field">
+          <%= f.label :music_genre_id, "音楽のジャンル（必須）" %><br />
+          <%= f.collection_select(:music_genre_id, MusicGenre.all, :id, :name, {}, {class:"select-box"}) %>
+        </div>
+
+        <div class="field">
+          <%= f.label :theme_song, "テーマソング（任意）" %><br />
+          <%= f.text_field :theme_song, placeholder:"曲名/アーティスト名", size: 40  %>
+        </div>
+
+        <div class="field">
+          <%= f.label :inserted_song, "挿入歌（任意）" %><br />
+          <%= f.text_area :inserted_song, placeholder:"曲名/アーティスト名", size: "40*20"  %>
+        </div>
+
+        <div class="field">
+          <%= f.label :text, "メモ（任意）" %><br />
+          <%= f.text_area :text, placeholder:"その他に気になったことがあればメモしてください", size: "50*40"  %>
+        </div>
+
+        <div class="field">
+          <%= f.label :image, "画像（任意）" %><br />
+          <%= f.file_field :image %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "新規投稿", class: :form__btn  %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

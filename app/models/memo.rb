@@ -1,6 +1,7 @@
 class Memo < ApplicationRecord
 
   with_options presence: true do
+    validates :user_id
     validates :movie_title
     validates :director
     validates :music  

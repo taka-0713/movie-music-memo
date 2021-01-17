@@ -1,3 +1,14 @@
+/* リセットCSS */
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #3b4043;
+}
+
 /* ヘッダー */
 
 .header {
@@ -52,11 +63,15 @@
 /* 新規登録ページ */
 
 .inner{
-  margin-left: 50px;
+  margin: 0px 50px;
 }
 
 .form__wrapper {
   min-height: 50%;
+}
+
+.field{
+  margin-top: 5px;
 }
 
 .page-heading{
@@ -76,6 +91,30 @@ input[type="submit"]{
   display: contents;
 }
 
+/* トップページ */
+
+.card__wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.memo{
+  width: calc((100% - 50px) / 3);
+  margin-bottom: 40px;
+}
+
+.memo-box{
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 10px 5px;
+  width: 50%;
+}
+
+.memo_user{
+  margin-top: 30px;
+}
 
 
 

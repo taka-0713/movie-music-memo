@@ -3,7 +3,7 @@
     <div class="form__wrapper">
       <h2 class="page-heading">新規メモ投稿</h2>
 
-        <%= form_with  model: @memo, url: local: true do |f| %>
+        <%= form_with  model: @memo, local: true do |f| %>
 
         <div class="field">
           <%= f.label :movie_title, "映画タイトル（必須）" %><br />

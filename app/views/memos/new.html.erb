@@ -3,11 +3,11 @@
     <div class="form__wrapper">
       <h2 class="page-heading">新規メモ投稿</h2>
 
-        <%= form_with  model: @memo, local: true do |f| %>
+        <%= form_with  model: @memo, url: local: true do |f| %>
 
         <div class="field">
-          <%= f.label :movie_title_id, "映画タイトル（必須）" %><br />
-          <%= f.text_field :movie_title_id, placeholder:"映画のタイトルを入力してください ", size: 35 %>
+          <%= f.label :movie_title, "映画タイトル（必須）" %><br />
+          <%= f.text_field :movie_title, placeholder:"映画のタイトルを入力してください ", size: 35 %>
         </div>
 
         <div class="field">

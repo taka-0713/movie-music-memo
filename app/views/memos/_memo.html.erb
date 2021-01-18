@@ -1,9 +1,9 @@
 <div class="memo">
-  <%= link_to image_tag(memo.image.variant(resize: '300x300'), class: :memo_img), "#" %> 
+  <%= link_to image_tag(memo.image.variant(resize: '300x300'), class: :memo_img), memo_path(memo.id) %> 
   <div class="memo-box">
-    <%= link_to "映画名    #{memo.movie_title}", "#", class: :memo_list %><br />
-    <%= link_to "監督     #{memo.director}", "#", class: :memo_list %><br />
-    <%= link_to "音楽担当   #{memo.music}", "#", class: :memo_list %><br />
+    <%= link_to "映画名    #{memo.movie_title}", memo_path(memo.id), class: :memo_list %><br />
+    <%= link_to "監督     #{memo.director}", memo_path(memo.id), class: :memo_list %><br />
+    <%= link_to "音楽担当   #{memo.music}", memo_path(memo.id), class: :memo_list %><br />
   </div>
   <div>
     <%= link_to "by #{memo.user.nickname}", "#", class: :memo_user %>

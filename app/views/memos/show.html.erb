@@ -1,0 +1,58 @@
+<main class="main">
+  <div class="inner">
+    <div class="memo_wrapper">
+
+      <%# メモの投稿者とログインしているユーザーが同じであれば以下を表示する %>
+        <div class="memo_manage">
+          <% if user_signed_in? && current_user.id == @memo.user.id %>
+            <%= link_to "編集する", "#", class: :memo_btn %>
+            <%= link_to "削除する", "#", method: :delete, class: :memo_btn %>
+          <% end %>
+        </div>
+      <%# // メモの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+
+      <div class="memo_img">
+        <%= image_tag @memo.image.variant(resize: '500x500') %>
+      </div>
+      
+      <div class="memo_body">
+        <div class="memo_detail">
+          <p class="detail__title">タイトル</p>
+          <p class="detail__message">
+            <%= @memo.movie_title %>
+          </p>
+          <p class="detail__title">監督</p>
+          <p class="detail__message">
+            <%= @memo.director %><br />
+          </p>
+          <p class="detail__title">音楽</p>
+          <p class="detail__message">
+            <%= @memo.music %>
+          </p>
+          <p class="detail__title">映画ジャンル</p>
+          <p class="detail__message">
+            <%= @memo.movie_genre.name %>
+          </p>
+          <p class="detail__title">音楽ジャンル</p>
+          <p class="detail__message">
+            <%= @memo.music_genre.name %>
+          </p>
+          <p class="detail__title">テーマソング</p>
+          <p class="detail__message">
+            <%= @memo.theme_song %>
+          </p>
+          <p class="detail__title">挿入歌</p>
+          <p class="detail__message">
+            <%= @memo.inserted_song %>
+          </p>
+          <p class="detail__title">備考</p>
+          <p class="detail__message">
+            <%= @memo.text %>
+          </p>
+        </div>
+      </div>
+      
+
+    </div>  
+  </div>
+</main>

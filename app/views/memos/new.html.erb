@@ -5,6 +5,8 @@
 
         <%= form_with  model: @memo, local: true do |f| %>
 
+        <%= render 'shared/error_messages', model: f.object %> 
+
         <div class="field">
           <%= f.label :movie_title, "映画タイトル（必須）" %><br />
           <%= f.text_field :movie_title, placeholder:"映画のタイトルを入力してください ", size: 35 %>

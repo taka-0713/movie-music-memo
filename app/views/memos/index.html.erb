@@ -1,1 +1,14 @@
-<h1>aaaa</h1>
+<main class="main">
+  <div class="inner">
+     <% if user_signed_in? %>
+      <div class="greeting">
+        <%= "ログイン中、"%>
+         <%= link_to "#{current_user.nickname}", "#", class: :greeting__link %>
+      </div> 
+     <% end %>
+    <div class="card__wrapper">
+      <%# 投稿機能実装後、部分テンプレートでメモ投稿一覧を表示する %>
+      <%= render partial: "memo", collection: @memo %>
+    </div>
+  </div>
+</main>

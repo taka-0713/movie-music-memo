@@ -80,8 +80,8 @@
 |movie_title   |string    |null: false      |
 |director      |string    |null: false      |
 |music         |string    |null: false      |
-|movie_genre   |integer   |null: false      |
-|music_genre   |integer   |null: false      |
+|movie_genre_id|integer   |null: false      |
+|music_genre_id|integer   |null: false      |
 |theme_song    |string    |                 |
 |inserted_song |string    |                 |
 |text          |text      |                 |

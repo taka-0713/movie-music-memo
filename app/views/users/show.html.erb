@@ -1,6 +1,17 @@
-<div class="user__card">
-  <%# 部分テンプレートでそのユーザーが投稿したmemo投稿一覧を表示する %>
-  <%= render partial: 'memos/memo', collection: @user.memos %>
+<div class="main">
+  <div class="inner">
+    <div class="user-wrapper">
+      <h2 class="user-heading">
+        <%= "#{@user.nickname}のメモ投稿一覧" %>
+      </h2>
+
+        <div class="user-card">
+          <%# 部分テンプレートでそのユーザーが投稿したmemo投稿一覧を表示する %>
+          <%= render partial: 'memos/memo', collection: @user.memos %>
+        </div>
+     
+     </div>
+  </div>
 </div>
 
         

@@ -115,6 +115,10 @@ input[type="submit"]{
   margin-left: 5px;
 }
 
+.greeting{
+  margin-bottom: 30px;
+}
+
 /* 詳細ページ */
 
 .memo_wrapper{
@@ -157,6 +161,24 @@ input[type="submit"]{
   border-radius: 3px;
 }
 
+/* マイページ */
+
+.user-wrapper{
+  min-height: calc(100vh - 161px);
+}
+
+.user-heading{
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.user-card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+} 
+
 /* 戻るボタン */
 
 .back-btn{
@@ -164,6 +186,7 @@ input[type="submit"]{
   color: gray;
 }
 
+/* NO IMAGE画像 */
 .no_img{
   border: 1px solid black;
 }

@@ -12,7 +12,11 @@
       <%# // メモの投稿者とログインしているユーザーが同じであれば上記を表示する %>
 
       <div class="memo_img">
-        <%= image_tag @memo.image.variant(resize: '500x500') %>
+        <% if @memo.image.attached? %>
+          <%= image_tag @memo.image.variant(resize: '500x500') %>
+        <% else %>
+          <%= image_tag('unnamed.png', size: '500x500', class: :no_img) %>
+        <% end %>
       </div>
       
       <div class="memo_body">

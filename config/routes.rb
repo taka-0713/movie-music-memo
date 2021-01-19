@@ -9,4 +9,6 @@ Rails.application.routes.draw do
 
   resources :memos, except: [:index]
 
+  resources :users, only: :show
+
 end

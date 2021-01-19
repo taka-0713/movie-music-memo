@@ -1,11 +1,11 @@
 <div class="main">
   <div class="inner">
     <div class="form__wrapper">
-      <h2 class="page-heading">新規メモ投稿</h2>
+      <h2 class="page-heading">メモ編集</h2>
 
         <%= form_with  model: @memo, local: true do |f| %>
 
-        <%= render 'shared/error_messages', model: f.object %> 
+        <%= render 'shared/error_messages', model: f.object %>   
 
         <div class="field">
           <%= f.label :movie_title, "映画タイトル（必須）" %><br />
@@ -53,8 +53,8 @@
         </div>
 
         <div class="actions">
-          <%= f.submit "新規投稿", class: :form__btn  %>
-          <%=link_to 'もどる', root_path, class:"back-btn" %>
+          <%= f.submit "変更する", class: :form__btn  %>
+          <%=link_to 'もどる', memo_path(@memo.id), class:"back-btn" %>
         </div>
       <% end %>
     </div>

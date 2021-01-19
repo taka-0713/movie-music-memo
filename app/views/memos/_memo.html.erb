@@ -1,5 +1,9 @@
 <div class="memos">
-  <%= link_to image_tag(memo.image.variant(resize: '300x300'), class: :movie_img), memo_path(memo.id) %> 
+  <% if memo.image.attached? %>
+    <%=  link_to image_tag(memo.image.variant(resize: '300x300')), memo_path(memo.id) %>
+  <% else %>
+     <%= link_to image_tag('unnamed.png', size: '300x300', class: :no_img), memo_path(memo.id) %>
+  <% end %>
   <div class="memo-box">
     <%= link_to "映画名    #{memo.movie_title}", memo_path(memo.id), class: :memo_list %><br />
     <%= link_to "監督     #{memo.director}", memo_path(memo.id), class: :memo_list %><br />

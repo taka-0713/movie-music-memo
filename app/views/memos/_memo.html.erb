@@ -5,9 +5,11 @@
      <%= link_to image_tag('unnamed.png', size: '300x300', class: :no_img), memo_path(memo.id) %>
   <% end %>
   <div class="memo-box">
-    <%= link_to "映画名    #{memo.movie_title}", memo_path(memo.id), class: :memo_list %><br />
-    <%= link_to "監督     #{memo.director}", memo_path(memo.id), class: :memo_list %><br />
-    <%= link_to "音楽担当   #{memo.music}", memo_path(memo.id), class: :memo_list %><br />
+    <div class="memo_list ">
+      <%= link_to "映画名    #{memo.movie_title}", memo_path(memo.id) %><br />
+      <%= link_to "監督     #{memo.director}", memo_path(memo.id)  %><br />
+      <%= link_to "音楽担当   #{memo.music}", memo_path(memo.id) %><br />
+    </div>
   </div>
   <div>
     <%= link_to "by #{memo.user.nickname}", user_path(memo.user), class: :memo_user %>

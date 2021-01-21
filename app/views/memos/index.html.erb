@@ -1,11 +1,26 @@
 <main class="main">
   <div class="inner">
-     <% if user_signed_in? %>
+    <% if user_signed_in? %>
       <div class="greeting">
         <%= "ログイン中、"%>
          <%= link_to "#{current_user.nickname}", user_path(current_user), class: :greeting__link %>
       </div> 
      <% end %>
+     <p class="describe-head">Movie Music Memo って？</p>
+      <p class="describe">
+        映画のストーリーと同じくらい音楽が心に残る... 
+        <br>
+        そんな経験ありませんか？
+        <br>
+        そんな時にはこのサービスで音楽の情報もメモしてください
+        <br>
+        音楽から映画を辿ったり、他のユーザーの気になったメモを見れば
+        <br>
+        色々な広がりが生まれるはずです
+        <br>
+        そんな日々の記録として、または深掘りのきっかけとしてお使いください
+      </p>
+     
     <div class="card__wrapper">
       <%# 投稿機能実装後、部分テンプレートでメモ投稿一覧を表示する %>
       <%= render partial: "memo", collection: @memo %>

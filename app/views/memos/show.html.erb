@@ -54,6 +54,9 @@
           <p class="detail__message">
             <%= safe_join(@memo.text.split("\n"),tag(:br)) %>
           </p>
+          <p class="detail__title">
+            <%= link_to "by #{@memo.user.nickname}", user_path(@memo.user), class: :memo_user %>
+          </p>
         </div>
       </div>
       

@@ -1,6 +1,7 @@
 <main class="main">
   <div class="inner">
     <div class="memo_wrapper">
+      <div><%=link_to 'もどる', root_path, class:"back-btn" %></div>
 
       <%# メモの投稿者とログインしているユーザーが同じであれば以下を表示する %>
         <div class="memo_manage">
@@ -43,15 +44,15 @@
           </p>
           <p class="detail__title">テーマソング</p>
           <p class="detail__message">
-            <%= @memo.theme_song %>
+            <%= safe_join(@memo.theme_song.split("\n"),tag(:br)) %>
           </p>
           <p class="detail__title">挿入歌</p>
           <p class="detail__message">
-            <%= @memo.inserted_song %>
+            <%= safe_join(@memo.inserted_song.split("\n"),tag(:br)) %>
           </p>
           <p class="detail__title">備考</p>
           <p class="detail__message">
-            <%= @memo.text %>
+            <%= safe_join(@memo.text.split("\n"),tag(:br)) %>
           </p>
         </div>
       </div>

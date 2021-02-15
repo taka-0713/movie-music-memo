@@ -20,4 +20,12 @@ class Memo < ApplicationRecord
     belongs_to :music_genre
   end
 
+  def self.search(search)
+    if search != ""
+      Memo.where('movie_title like(?) or director like(?) or music like(?)', "%#{search}%", "%#{search}%", "%#{search}%")
+    else
+      @memo = Memo.includes(:user).order("created_at DESC")
+    end
+  end
+
 end

@@ -1,0 +1,18 @@
+<div class="main">
+  <div class="inner">
+    <div class="search-wrapper">
+      <div><%=link_to 'もどる', root_path, class:"back-btn" %></div>
+
+        <div class="search-card">
+          <% @memos.each do |memo| %>
+          <%= render partial: "memo", locals: { memo: memo } %>
+          <% end %>
+        </div>
+     
+     </div>
+  </div>
+</div>
+  
+  
+  
+  

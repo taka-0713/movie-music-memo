@@ -7,7 +7,11 @@ Rails.application.routes.draw do
 
   root to: 'memos#index'
 
-  resources :memos, except: [:index]
+  resources :memos, except: [:index] do
+    collection do
+      get 'search'
+    end
+  end
 
   resources :users, only: :show
 

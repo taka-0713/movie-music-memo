@@ -24,7 +24,7 @@ class Memo < ApplicationRecord
     if search != ""
       Memo.where('movie_title like(?) or director like(?) or music like(?)', "%#{search}%", "%#{search}%", "%#{search}%")
     else
-      @memo = Memo.includes(:user).order("created_at DESC")
+      @memos = Memo.includes(:user).order("created_at DESC")
     end
   end
 
